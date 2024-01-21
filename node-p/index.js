@@ -1,6 +1,10 @@
 const express = require('express');
+const cors = require('cors'); // Import the cors middleware
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Enable CORS for all routes
+app.use(cors());
 
 app.get('/api/github-token', (req, res) => {
     const githubToken = process.env.GITHUB_TOKEN;
